@@ -17,11 +17,12 @@ The dataset used for evaluation is here: https://github.com/docugami/KG-RAG-data
 ## Prerequisites
 
 *   Python 3.9+
+* Ollama installed or OpenAI API Key
 *   [**uv**](https://github.com/astral-sh/uv): A fast Python package installer and resolver.
 
 ## Installation
 
-1.  **Clone the repository (if applicable):**
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/dan0nchik/langchain-rag-agent.git
     cd langchain-rag-agent
@@ -41,7 +42,7 @@ The dataset used for evaluation is here: https://github.com/docugami/KG-RAG-data
     uv --version
     ```
 
-3.  **Create and sync a virtual environment (recommended):**
+3.  **Create and sync a virtual environment:**
     ```bash
     uv sync
     ```
@@ -76,4 +77,10 @@ Example `.env` file content:
 OPENAI_API_KEY="your_openai_api_key_here"
 
 OLLAMA_BASE_URL="http://localhost:11434" # Only if different from default in config.py or if you want to override
+```
+
+### 3. Run the script
+
+```python
+python3 main.py
 ```
