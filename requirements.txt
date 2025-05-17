@@ -1,0 +1,11 @@
+langchain
+langchain_community
+langchain_ollama
+chromadb
+langchain-graph-retriever
+langchain-graph-retriever[chroma]
+langchain-openai
+langchain-openai[embeddings]
+pandas
+pypdf
+wonderwords
