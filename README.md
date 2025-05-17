@@ -14,6 +14,47 @@ The dataset used for evaluation is here: https://github.com/docugami/KG-RAG-data
 *   Evaluates the RAG pipeline using DeepEval with metrics like Contextual Precision, Recall, Relevancy, Answer Relevancy, and Faithfulness.
 *   Comprehensive logging for traceability.
 
+## Comparison results:
+```bash
+LLM Provider: chatgpt
+
+LLM Model: gpt-4o-mini
+
+Embedding Model: text-embedding-3-small
+
+RAG Type: standard
+
+PDF Directory: ./docs
+
+QnA CSV Path: eval_qna/qna_data_medium.csv
+
+Vector Store Collection: pdf_eval_docs_chatgpt_standard
+
+Chroma Persist Directory: ./chroma_db_store
+
+Initialized LLM: gpt-4o-mini from chatgpt
+
+Initialized Embedding Model: text-embedding-3-small
+
+Loading PDFs from ./docs...
+
+Loaded 1037 PDF documents (pages/files).
+
+Split into 4494 document chunks.
+
+======================================================================
+
+Overall Metric Pass Rates
+
+Contextual Precision: 49.49% pass rate
+Contextual Recall: 41.41% pass rate
+Contextual Relevancy: 44.44% pass rate
+Answer Relevancy: 76.77% pass rate
+Faithfulness: 98.99% pass rate
+
+======================================================================
+```
+
 ## Prerequisites
 
 *   Python 3.9+

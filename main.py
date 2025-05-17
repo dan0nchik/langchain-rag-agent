@@ -36,6 +36,7 @@ from deepeval.metrics import (
     AnswerRelevancyMetric,
     FaithfulnessMetric,
 )
+from deepeval.models import GPTModel, OllamaModel
 from deepeval.test_case import LLMTestCase
 from deepeval import evaluate
 
@@ -316,7 +317,7 @@ if config.DEEPEVAL_METRICS_MODEL_PROVIDER == "ollama":
         raise ValueError(
             "OLLAMA_LLM_MODEL must be set in config for DEEPEVAL_METRICS_MODEL_PROVIDER='ollama'"
         )
-    eval_llm_for_metric = ChatOllama(
+    eval_llm_for_metric = OllamaModel(
         model=config.OLLAMA_LLM_MODEL, base_url=config.OLLAMA_BASE_URL
     )
     deepeval_model_name_for_metric_logging = f"Ollama: {config.OLLAMA_LLM_MODEL}"
@@ -329,9 +330,7 @@ elif config.DEEPEVAL_METRICS_MODEL_PROVIDER == "chatgpt":
         logging.info(
             "Warning: OPENAI_API_KEY is not set. DeepEval metrics configured for 'chatgpt' may fail."
         )
-    eval_llm_for_metric = ChatOpenAI(
-        model=config.OPENAI_LLM_MODEL, api_key=config.OPENAI_API_KEY
-    )
+    eval_llm_for_metric = GPTModel(model=config.DEEPEVAL_METRICS_GPT_MODEL)
     deepeval_model_name_for_metric_logging = f"OpenAI: {config.OPENAI_LLM_MODEL}"
 elif config.DEEPEVAL_METRICS_MODEL_PROVIDER == "default":
     deepeval_model_name_for_metric_logging = "DeepEval Default (likely OpenAI)"
