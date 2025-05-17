@@ -23,11 +23,11 @@ The dataset used for evaluation is here: https://github.com/docugami/KG-RAG-data
 
 1.  **Clone the repository (if applicable):**
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-directory>
+    git clone https://github.com/dan0nchik/langchain-rag-agent.git
+    cd langchain-rag-agent
     ```
 
-2.  **Install `uv`:**
+2.  **Install `uv` package manager:**
     Follow the official installation instructions for `uv` from [https://github.com/astral-sh/uv#installation](https://github.com/astral-sh/uv#installation). For example:
     ```bash
     # On macOS and Linux
