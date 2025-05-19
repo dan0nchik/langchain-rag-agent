@@ -25,7 +25,7 @@ OPENAI_EMBEDDING_MODEL = (
 
 # --- RAG Configuration ---
 # Choose RAG_TYPE: "standard" or "graph"
-RAG_TYPE = "graph"  # Choices: "standard", "graph"
+RAG_TYPE = "standard"  # Choices: "standard", "graph"
 
 # --- Data Paths ---
 PDF_DIRECTORY_PATH = "./docs"  # Directory containing PDF files
@@ -57,8 +57,10 @@ STANDARD_RETRIEVER_K = 5  # Number of documents to retrieve for standard RAG
 # "ollama": Use the OLLAMA_LLM_MODEL.
 # "chatgpt": Use the OPENAI_LLM_MODEL (requires OPENAI_API_KEY).
 # "default": DeepEval uses its own default (often OpenAI-based, may require OPENAI_API_KEY).
+
 DEEPEVAL_METRICS_MODEL_PROVIDER = "chatgpt"  # Choices: "ollama", "chatgpt", "default"
 DEEPEVAL_METRICS_GPT_MODEL = "gpt-4.1"  # Model for DeepEval metrics
+RUN_DEEPEVAL_EVALUATION = False
 
 
 # --- Helper functions for clarity in the main script ---
